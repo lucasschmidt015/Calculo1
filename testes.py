@@ -7,12 +7,16 @@ else:
 
 import math
 
+def equacao(x):
+   y = x**3 +x**2 + math.sin(x) -2
+   return y
+
 x1 = float(input())
 x2 = float(input())
-conta1 =x1**3 +x1**2 + math.sin(x1) -2
-conta2 =x2**3 +x2**2 + math.sin(x2) -2
-print(conta1, conta2)
-if conta1 > 0 and conta2 < 0 or conta1 < 0 and conta2 > 0:
-    print("a equação tem pelo menos uma solução neste intervalo")
-else:
+y1 = equacao(x1)
+y2 = equacao(x2)
+print(y1, y2)
+if y1 > 0 < y2:
+    print("não é possível afirmar que existe solução neste intervalo, tente outros dois números")
+#else:
     
