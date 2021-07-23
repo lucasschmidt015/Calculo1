@@ -11,12 +11,14 @@ def equacao(x):
    y = x**3 +x**2 + math.sin(x) -2
    return y
 
-x1 = float(input())
-x2 = float(input())
-y1 = equacao(x1)
-y2 = equacao(x2)
-print(y1, y2)
-if y1 > 0 < y2:
-    print("não é possível afirmar que existe solução neste intervalo, tente outros dois números")
-#else:
+def meio(a=None, b=None):
+    meio = (a - b)/2
+    return meio
+
+
+while True:
+    x1 = float(input())
+    x2 = float(input())
+    y1 = equacao(x1)
+    y2 = equacao(x2)
     
