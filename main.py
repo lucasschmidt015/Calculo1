@@ -1,23 +1,15 @@
 import math
 
-def equacao(x):
+def f(x):
     return x**3 +x**2 + math.sin(x) -2
 
 
 def meio(a=None, b=None):
-    meio = (a - b)/2
+    meio = (a + b)/2
     return meio
 
-'''def bissecao(f,a,b,prec):
-    """ Método da bisseção para uma função f no intervalo [a,b]. """
-    m = (a+b)/2
-    # Se já há precisão suficiente, retornamos o ponto médio do intervalo
-    if abs(b - a) < prec: 
-        return m
-    # Se f(m) == 0, achamos uma raiz exata!
-    if f(m) == 0: return m'''
 
-parar = 10e-1
+parar = 10**-1
 contador = 0
 digte_num = True
 distancia = float
@@ -29,13 +21,13 @@ while True:
             print("não é possível afirmar que existe solução neste intervalo, tente outros dois números")
         else:
             digte_num = False
-    Img1 = equacao(a)
-    Img2 = equacao(b)
+    Img1 = f(a)
+    Img2 = f(b)
     pmeio = meio(a,b)
-    ImgM = equacao(pmeio)
+    ImgM = f(pmeio)
     b = pmeio
     if ImgM < 0 and Img1 > 0 or ImgM > 0 and Img1 < 0:
-        print(ImgM, "  A ", Img1)
+        print(Img1, "  A ", ImgM)
         b = pmeio
         print("A")
         contador+=1
@@ -45,8 +37,7 @@ while True:
         contador+=1
     distancia = a - b
     print(f"Distancia: {distancia:.4f}")
-    if abs(distancia) < parar:
-        print(parar)
+    if abs(b - a) < parar:
         break
 
  
