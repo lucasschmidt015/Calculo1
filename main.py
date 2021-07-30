@@ -14,7 +14,7 @@ while True:
     while digte_num:
         a = float(input("Ponto 1: "))
         b = float(input("Ponto 2: "))
-        if(a > 0 < b or a< 0 > b):
+        if(f(a) > 0 < f(b) or f(a)< 0 > f(b)):
             print("não é possível afirmar que existe solução neste intervalo, tente outros dois números")
         else:
             digte_num = False
@@ -27,6 +27,10 @@ while True:
     elif ImgM < 0 and Img2 > 0 or ImgM > 0 and Img2 < 0:
         a = pmeio
     if abs(ImgM) < parar:
-        print(f"a equação tem pelo menos uma solução neste intervalo")
-        print(f"Intervalo: [{a}, {b}]")
-        break 
+        print(f"a reta tem pelo menos uma solução neste intervalo")
+        print(f"Menor intervalo: [{a}, {b}]")
+        quit = input("Quer continuar? [S/N]: ").upper()
+        if quit == 'N':
+            break
+        else:
+            digte_num = True
